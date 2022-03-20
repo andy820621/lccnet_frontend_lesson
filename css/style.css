@@ -1,0 +1,8 @@
+.contaner {
+  width: min(80rem, 90vw);
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
