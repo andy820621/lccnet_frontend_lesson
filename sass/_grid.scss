@@ -1,0 +1,80 @@
+@use "./var";
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+@each $name, $width in var.$breackpoints {
+	@media (min-width: $width) {
+		.container {
+			width: if($width == 0px, 100%, $width);
+		}
+		@for $i from 1 through var.$column {
+			@if ($name == "xs") {
+				.col-#{$i} {
+					width: 100% / var.$column * $i;
+				}
+			} @else {
+				.col-#{$name}-#{$i} {
+					width: 100% / var.$column * $i;
+				}
+			}
+		}
+	}
+}
+
+@mixin xs {
+	@media (min-width: map-get(var.$breackpoints, xs)) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (min-width: map-get(var.$breackpoints, sm)) {
+		@content;
+	}
+}
+@mixin md {
+	@media (min-width: map-get(var.$breackpoints, md)) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: map-get(var.$breackpoints, lg)) {
+		@content;
+	}
+}
+@mixin xl {
+	@media (min-width: map-get(var.$breackpoints, xl)) {
+		@content;
+	}
+}
+
+@include sm {
+	.container-sm {
+		width: min(100%, map-get(var.$breackpoints, sm));
+	}
+}
+@include md {
+	.container-sm,
+	.container-md {
+		width: min(100%, map-get(var.$breackpoints, md));
+	}
+}
+@include lg {
+	.container-sm,
+	.container-md,
+	.container-lg {
+		width: min(100%, map-get(var.$breackpoints, lg));
+	}
+}
+@include xl {
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl {
+		width: min(100%, map-get(var.$breackpoints, xl));
+	}
+}
+[class^="container"] {
+	margin: auto;
+}

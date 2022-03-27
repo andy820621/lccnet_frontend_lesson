@@ -1,0 +1,34 @@
+@use "./var";
+
+@each $name, $width in var.$breackpoints {
+	@media (min-width: $width) {
+		@each $display in var.$displays {
+			@if ($name == "xs") {
+				.#{$display} {
+					display: $display;
+				}
+			} @else {
+				.#{$display}-#{$name} {
+					display: $display;
+				}
+			}
+		}
+	}
+}
+@each $position in var.$positions {
+	.#{$position} {
+		position: $position;
+	}
+}
+@for $i from 0 through 20 {
+	.p-#{$i} {
+		padding: $i * 0.25rem;
+	}
+}
+@each $direction, $d in var.$directions {
+	@for $i from 0 through 20 {
+		.p#{$d}-#{$i} {
+			padding-#{$direction}: $i * 0.25rem;
+		}
+	}
+}

@@ -1,43 +1,14 @@
-.container {
-	width: min(80rem, 90vw);
-	margin: 0 auto;
-}
-.flex {
-	display: flex;
-	flex-wrap: wrap;
-}
+@use "./base";
+@use "./grid";
+@use "./color";
+@use "./utilities";
 
-$colors: (
-	"red": #b95656,
-	"yellow": #b9b256,
-	"green": #5eb956,
-	"blue": #566db9,
-);
-@each $colorName, $colorValue in $colors {
-	.color-#{$colorName} {
-		background-color: $colorValue;
+body {
+	background-color: rgb(206, 144, 144);
+	@include grid.sm {
+		background-color: rgb(255, 195, 127);
 	}
-}
-
-$column: 12;
-$breackpoints: (
-	"none": 0px,
-	"sm": 400px,
-	"md": 800px,
-	"lg": 1200px,
-);
-@each $name, $width in $breackpoints {
-	@media (min-width: $width) {
-		@for $i from 1 through $column {
-			@if ($name == "none") {
-				.col-#{$i} {
-					width: 100% / $column * $i;
-				}
-			} @else {
-				.col-#{$name}-#{$i} {
-					width: 100% / $column * $i;
-				}
-			}
-		}
+	@include grid.lg {
+		background-color: aquamarine;
 	}
 }
