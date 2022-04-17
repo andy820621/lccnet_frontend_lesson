@@ -22,12 +22,15 @@
 				margin: 2rem 0;
 				padding: 2rem 0;
 			}
+			#contact {
+				background-color: #abc2cc;
+			}
 		</style>
 	</head>
 	<body>
 		<header>
 			<nav
-				class="navbar navbar-expand-md navbar-dark"
+				class="navbar navbar-expand-md navbar-dark fixed-top"
 				style="background-color: #306478"
 			>
 				<div class="container-fluid">
@@ -49,15 +52,12 @@
 								<a class="nav-link active" aria-current="page" href="#">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Features</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Pricing</a>
+								<a class="nav-link" href="#features">Features</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a
 									class="nav-link dropdown-toggle"
-									href="#"
+									href="#service"
 									id="navbarDropdownMenuLink"
 									role="button"
 									data-bs-toggle="dropdown"
@@ -71,19 +71,24 @@
 									aria-labelledby="navbarDropdownMenuLink"
 								>
 									<li>
-										<a class="dropdown-item text-light" href="#">Action</a>
+										<a class="dropdown-item text-light" href="#service"
+											>Action</a
+										>
 									</li>
 									<li>
-										<a class="dropdown-item text-light" href="#"
+										<a class="dropdown-item text-light" href="#service"
 											>Another action</a
 										>
 									</li>
 									<li>
-										<a class="dropdown-item text-light" href="#"
+										<a class="dropdown-item text-light" href="#service"
 											>Something else here</a
 										>
 									</li>
 								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#contact">contact</a>
 							</li>
 						</ul>
 						<hr class="d-block d-md-none" style="color: white" />
@@ -221,7 +226,10 @@
 								Doloribus dolore iusto velit saepe autem, beatae tempora? Modi
 								omnis voluptatem dolores qui magnam, sunt nam.
 							</p>
-							<a href="#"
+							<a
+								href="#"
+								data-bs-toggle="modal"
+								data-bs-target="#featureModal-1"
 								>More
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -326,6 +334,45 @@
 									/>
 								</svg>
 							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal -->
+			<div
+				class="modal fade"
+				id="featureModal-1"
+				tabindex="-1"
+				role="dialog"
+				aria-labelledby="ModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="ModalLabel">Modal title</h5>
+							<button
+								type="button"
+								class="close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							>
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
+							possimus at ut hic magni illo, quos doloremque nihil esse omnis
+							assumenda! Illo, amet! Neque.
+						</div>
+						<div class="modal-footer">
+							<button
+								type="button"
+								class="btn btn-secondary"
+								data-bs-dismiss="modal"
+							>
+								Close
+							</button>
 						</div>
 					</div>
 				</div>
@@ -455,7 +502,7 @@
 							<div class="border rounded-3 overflow-hidden shadow-sm">
 								<div>
 									<img
-										src="https://picsum.photos/id/81/400/280"
+										src="https://picsum.photos/id/80/400/280"
 										class="w-100"
 									/>
 								</div>
@@ -495,7 +542,7 @@
 							<div class="border rounded-3 overflow-hidden shadow-sm">
 								<div>
 									<img
-										src="https://picsum.photos/id/81/400/280"
+										src="https://picsum.photos/id/82/400/280"
 										class="w-100"
 									/>
 								</div>
@@ -515,7 +562,7 @@
 							<div class="border rounded-3 overflow-hidden shadow-sm">
 								<div>
 									<img
-										src="https://picsum.photos/id/81/400/280"
+										src="https://picsum.photos/id/83/400/280"
 										class="w-100"
 									/>
 								</div>
@@ -530,6 +577,84 @@
 									<a href="#" class="btn btn-outline-primary">Link</a>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="contact">
+				<div class="container py-5">
+					<div class="row justify-content-center">
+						<h2
+							class="title col-12 text-center m-5 text-secondary font-weight-bold"
+						>
+							Contact
+						</h2>
+						<div class="col-8">
+							<form action="" class="row" style="column-gap: 2rem">
+								<div class="mb-3 row col-6">
+									<label for="" class="col-form-label col-2">姓名</label>
+									<div class="col-10">
+										<input type="text" class="form-control" />
+									</div>
+								</div>
+								<div class="mb-3 row col-6">
+									<label for="" class="col-form-label col-2">電話</label>
+									<div class="col-10">
+										<input type="phone" class="form-control" />
+									</div>
+								</div>
+								<div class="mb-3 row col-6">
+									<label for="" class="col-form-label col-2">收入</label>
+									<div class="col-10">
+										<select name="" id="" class="form-select">
+											<option value="">0~100</option>
+											<option value="">100~200</option>
+											<option value="">200~300</option>
+											<option value="">300~400</option>
+											<option value="">400~500</option>
+										</select>
+									</div>
+								</div>
+								<div class="mb-3 row col-6">
+									<label for="" class="col-form-label col-2">性別</label><br />
+									<div class="col-10 flex align-items-center">
+										<div
+											class="form-check d-inline-block"
+											style="line-height: 38px"
+										>
+											<input
+												type="radio"
+												class="form-check-input"
+												name="gender"
+												style="line-height: 38px; margin-top: 11px"
+											/>
+											<label for="" class="form-check-label">男</label>
+										</div>
+										<div
+											class="form-check d-inline-block"
+											style="line-height: 38px"
+										>
+											<input
+												type="radio"
+												class="form-check-input"
+												name="gender"
+												style="line-height: 38px; margin-top: 11px"
+											/>
+											<label for="" class="form-check-label">女</label>
+										</div>
+									</div>
+								</div>
+								<div class="mb-3">
+									<label for="" class="form-label">內容</label>
+									<textarea
+										name=""
+										id=""
+										cols="30"
+										rows="5"
+										class="form-control"
+									></textarea>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
