@@ -17,6 +17,10 @@ module.exports = {
 				danger: "#9A1212",
 				success: "#197649",
 			},
+			// spacing: {
+			// 	112: "28rem",
+			// 	128: "32rem",
+			// },
 		},
 	},
 	plugins: [],

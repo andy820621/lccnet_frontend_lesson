@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+	</head>
+	<body>
+		<div
+			class="text-center w-[600px] mx-auto bg-green-200 rounded-[.8rem] mt-36 p-3 outline outline-green-400 outline-offset-8"
+		>
+			<h1 class="text-3xl p-2">Hello</h1>
+			<p class="mb-3">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores est
+				dolore totam expedita minima qui incidunt enim, asperiores aut possimus
+				sapiente cupiditate alias molestiae porro delectus voluptas recusandae
+				sequi repellat deserunt corporis, nobis ducimus reprehenderit fugiat
+				quam. Natus, cumque a harum voluptate perferendis dolore amet et vel
+				earum. Dignissimos, est?
+			</p>
+			<a href="#" class="inline-block px-5 py-2 bg-amber-500 rounded-lg"
+				>Button</a
+			>
+		</div>
+		<script>
+			gsap.defaults({
+				duration: 1,
+			});
+			let tl = gsap.timeline();
+			tl.from("h1", { opacity: 0, y: -30 })
+				.from("p", { opacity: 0, y: 24 }, "-=0.5")
+				.from("a", { opacity: 0, y: 8 }, "-=0.5");
+		</script>
+	</body>
+</html>

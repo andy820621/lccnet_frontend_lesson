@@ -20,4 +20,16 @@
 		@apply mx-auto p-5 bg-emerald-800;
 		width: max(60vw, 800px);
 	}
+	.link {
+		@apply inline-block border-2 bg-slate-300 border-slate-800 rounded-lg px-4 py-1 hover:ring-4 ring-offset-4 ring-offset-cyan-200 focus:ring-4 focus:ring-red-400;
+	}
+	.grid-mansary {
+		grid-template-rows: masonry;
+	}
+	.img-container {
+		height: 100px;
+		padding: 4px;
+		cursor: pointer;
+		height: auto;
+	}
 }
