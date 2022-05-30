@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+		<style>
+			.content-container {
+				display: flex;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="title">I'm</h1>
+		<div class="content-container">
+			<h2 class="content"></h2>
+			<h2>|</h2>
+		</div>
+		<script>
+			function textAnimation() {
+				gsap.defaults({ duration: 1, ease: "none" });
+				gsap
+					.timeline({ repeat: -1 })
+					.to(".content", {
+						text: "Hsieh Yao-tsu ",
+						ease: "none",
+						repeat: 1,
+						delay: 0.5,
+						yoyo: true,
+					})
+					.to(".content", {
+						text: "Web Designer ",
+						ease: "none",
+						repeat: 1,
+						delay: 0.5,
+						yoyo: true,
+					})
+					.to(".content", {
+						text: "Front-end Developer ",
+						ease: "none",
+						repeat: 1,
+						delay: 0.5,
+						yoyo: true,
+					})
+					.to(".content", {
+						text: "SutterBug ",
+						ease: "none",
+						repeat: 1,
+						delay: 0.5,
+						yoyo: true,
+					});
+			}
+			textAnimation();
+			document
+				.querySelector(".content")
+				.addEventListener("animationend", textAnimation);
+		</script>
+	</body>
+</html>
