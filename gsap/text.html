@@ -22,36 +22,26 @@
 		</div>
 		<script>
 			function textAnimation() {
-				gsap.defaults({ duration: 1, ease: "none" });
+				gsap.defaults({
+					duration: 1,
+					delay: 0.5,
+					ease: "none",
+					repeat: 1,
+					yoyo: true,
+				});
 				gsap
 					.timeline({ repeat: -1 })
 					.to(".content", {
 						text: "Hsieh Yao-tsu ",
-						ease: "none",
-						repeat: 1,
-						delay: 0.5,
-						yoyo: true,
 					})
 					.to(".content", {
 						text: "Web Designer ",
-						ease: "none",
-						repeat: 1,
-						delay: 0.5,
-						yoyo: true,
 					})
 					.to(".content", {
 						text: "Front-end Developer ",
-						ease: "none",
-						repeat: 1,
-						delay: 0.5,
-						yoyo: true,
 					})
 					.to(".content", {
 						text: "SutterBug ",
-						ease: "none",
-						repeat: 1,
-						delay: 0.5,
-						yoyo: true,
 					});
 			}
 			textAnimation();
