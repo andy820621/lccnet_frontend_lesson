@@ -8,20 +8,24 @@
 		<script src="https://unpkg.com/vue@3"></script>
 	</head>
 	<body>
-		<div id="banana">
-			<h1>{{msg}}</h1>
-			<div>{{count}}</div>
+		<div id="app">
+			<app-box>Click</app-box>
+			<app-box>Touch</app-box>
 		</div>
 
 		<script>
-			Vue.create({
-				data: function () {
-					return {
-						msg: "helle VUE!!",
-						count: 100,
-					};
+			const { createApp } = Vue;
+			let app = createApp({
+				data() {
+					return {};
 				},
 			});
+
+			app.componen("app-box", {
+				template: `<button><slot /></button>`,
+			});
+
+			app.mount("#app");
 		</script>
 	</body>
 </html>

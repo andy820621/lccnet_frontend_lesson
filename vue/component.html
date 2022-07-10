@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://unpkg.com/vue@3"></script>
+	</head>
+	<body>
+		<div id="app">
+			<app-title>{{msg}}</app-title>
+			<app-title></app-title>
+			<app-title>Hello Vue</app-title>
+			<app-title>Hello Components</app-title>
+			<app-box box-msg="test"></app-box>
+			<app-box :box-msg="msg"></app-box>
+		</div>
+
+		<script>
+			const { createApp } = Vue;
+			let app = {
+				data() {
+					return {
+						msg: "this is app component a message.",
+					};
+				},
+				components: {
+					"app-title": {
+						template: `<h1><slot>{{defaultContent}}</slot></h1>`,
+						data() {
+							return {
+								defaultContent: "Default content.",
+							};
+						},
+					},
+					"app-box": {
+						props: ["boxMsg"],
+						template: `<div>{{boxMsg}}</div>`,
+					},
+				},
+			};
+			createApp(app).mount("#app");
+		</script>
+	</body>
+</html>

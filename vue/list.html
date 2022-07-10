@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://unpkg.com/vue@3"></script>
+		<style>
+			.title {
+				color: #30645678;
+			}
+			.text-red {
+				color: red;
+			}
+			.text-blue {
+				color: blue;
+			}
+			#app {
+				display: grid;
+				gap: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<section>
+				<h1>List</h1>
+				<ul>
+					<li v-for="list of listUnCompleted" :key="list.id">
+						<input
+							type="checkbox"
+							:name="list.name"
+							:id="list.name"
+							v-model="list.isCompleted"
+						/>
+						<label :for="list.name">{{list.name}}</label>
+					</li>
+				</ul>
+			</section>
+
+			<section v-if="listCompleted.length">
+				<h1>已完成</h1>
+				<ul>
+					<li v-for="list of listCompleted" :key="list.id">
+						<input
+							type="checkbox"
+							:name="list.name"
+							:id="list.name"
+							v-model="list.isCompleted"
+						/>
+						<label :for="list.name">{{list.name}}</label>
+					</li>
+				</ul>
+			</section>
+
+			<pre>
+				{{lists}}
+			</pre
+			>
+		</div>
+
+		<script>
+			Vue.createApp({
+				data() {
+					return {
+						lists: [
+							{ id: 1, name: "HTML", isCompleted: false },
+							{ id: 2, name: "CSS", isCompleted: false },
+							{ id: 3, name: "JS", isCompleted: false },
+							{ id: 4, name: "Vue", isCompleted: false },
+						],
+					};
+				},
+				methods: {},
+				computed: {
+					listCompleted() {
+						return this.lists.filter((list) => list.isCompleted);
+					},
+					listUnCompleted() {
+						return this.lists.filter((list) => !list.isCompleted);
+					},
+				},
+			}).mount("#app");
+		</script>
+	</body>
+</html>
